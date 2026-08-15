@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: resellzos-vinted-feed
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: PYTHONUNBUFFERED
+        value: "1"
